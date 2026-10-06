@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <div>
+        <h1>Employee Management System</h1>
+        <p></p>
+    </div>
+    <button class="primary" onclick="openAddForm()">+ Add Employee</button>
+</header>
+
+<main class="container">
+    <section class="stats">
+        <div class="stat-card">
+            <span>Total Employees</span>
+            <strong id="employeeCount">0</strong>
+        </div>
+       
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <div>
+                <h2>Employees</h2>
+                <p>Manage your employee records</p>
+            </div>
+            <input id="searchInput" type="search" placeholder="Search employees..." oninput="renderEmployees()">
+        </div>
+
+        <div id="message" class="message hidden"></div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="employeeTableBody">
+                <tr><td colspan="5" class="empty">Loading employees...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<div id="employeeModal" class="modal hidden">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h2 id="modalTitle">Add Employee</h2>
+            <button class="close" onclick="closeModal()">&times;</button>
+        </div>
+        <form id="employeeForm" onsubmit="saveEmployee(event)">
+            <input type="hidden" id="employeeId">
+
+            <label>Name</label>
+            <input id="name" type="text" required placeholder="Enter name">
+
+            <label>Email</label>
+            <input id="email" type="email" required placeholder="Enter email">
+
+            <label>Department</label>
+            <input id="department" type="text" required placeholder="e.g. IT">
+
+            <div class="form-actions">
+                <button type="button" class="secondary" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="primary" id="saveButton">Save Employee</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<footer>
+       © 2026 Biswajit Behera | Employee Management System
+   </footer>
+</body>
+</html>
