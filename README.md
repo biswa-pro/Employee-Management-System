@@ -12,13 +12,13 @@ The application allows authorized users to manage employee records through a sim
 -  Edit Employee
 -  Delete Employee
 -  Search Employees
-- 📱 Responsive User Interface
-- 🗄️ PostgreSQL Database
-- 🔄 RESTful APIs
+-  Responsive User Interface
+-  PostgreSQL Database
+-  RESTful APIs
 
----
 
-## 🛠️ Technologies Used
+
+##  Technologies Used
 
 ### Backend
 
